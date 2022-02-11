@@ -39,5 +39,14 @@ jobs:
 
       - name: Installer le vendor 
         run: composer install 
+
+      - name: Creation de la base de donnees
+        run: php bin/console doctrine:database:create
+
+      - name: Creation du ficheir migration SQL
+        run: php bin/console make:migration
+      
+      - name: Execution du script 
+        run: php bin/console -n doctrine:migrations:migrate
           # echo Add other actions to build,
           # echo test, and deploy your project.
