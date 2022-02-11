@@ -34,10 +34,10 @@ jobs:
       - name: Test de composer
         run: composer -v 
 
-      - name: Renommer le fichier d'environnement 
-        run: mv _.env.exempl .env
+      # - name: Renommer le fichier d'environnement 
+      #   run: mv _.env.exempl .env
 
-        # - name: Installer le vendor 
-        #   run: composer install 
+        - name: Installer le vendor 
+          run: composer install 
           # echo Add other actions to build,
           # echo test, and deploy your project.
